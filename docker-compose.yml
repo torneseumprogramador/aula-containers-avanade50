@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+  apiruby:
+    container_name: api-ruby
+    image: didox/desafio_multiplasapis_ruby_tarefas:latest
+    ports:
+      - "80:3000"
+    environment:
+      RAILS_ENV: production
+      DATABASE: api-ruby
+      USER: root
+      PASSWORD: root
+      HOST: 192.168.0.17
+
+  apiruby2:
+    container_name: api-ruby2
+    image: didox/desafio_multiplasapis_ruby_tarefas:latest
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: production
+      DATABASE: api-ruby
+      USER: root
+      PASSWORD: root
+      HOST: 192.168.0.17
